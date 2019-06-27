@@ -79,9 +79,12 @@
     <Content Include="Add Brand.aspx" />
     <Content Include="Add Product.aspx" />
     <Content Include="Brand.aspx" />
+    <Content Include="Demo.aspx" />
     <Content Include="Edit Brand.aspx" />
     <Content Include="Edit Product.aspx" />
     <Content Include="Home.aspx" />
+    <Content Include="Images\Delete.png" />
+    <Content Include="Images\edit.png" />
     <Content Include="Images\Mixer.jpg" />
     <Content Include="Login.aspx" />
     <Content Include="Products List.aspx" />
@@ -111,6 +114,13 @@
     </Compile>
     <Compile Include="Brand.aspx.designer.cs">
       <DependentUpon>Brand.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Demo.aspx.cs">
+      <DependentUpon>Demo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demo.aspx.designer.cs">
+      <DependentUpon>Demo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Edit Brand.aspx.cs">
       <DependentUpon>Edit Brand.aspx</DependentUpon>

@@ -66,7 +66,15 @@
                             <Columns>
                                 <asp:BoundField DataField="Brand_Name" HeaderText="Brand_Name" SortExpression="Brand_Name" />
                                 <asp:BoundField DataField="Brand_Id" HeaderText="Brand_Id" SortExpression="Brand_Id" />
-                                <asp:CommandField HeaderText="Edit" ShowCancelButton="False" ShowEditButton="True" ShowHeader="True" />
+                                <asp:TemplateField HeaderText="Edit">
+                                    <EditItemTemplate>
+                                        <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                                    </EditItemTemplate>
+                                    <ItemTemplate>
+                                        <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" CommandName="Edit" ImageUrl="~/Images/edit.png" OnClick="ImageButton1_Click" Text="" />
+                                    </ItemTemplate>
+                                    <ControlStyle Height="12px" Width="15px" />
+                                </asp:TemplateField>
                                 <asp:CommandField ButtonType="Button" HeaderText="Delete" ShowDeleteButton="True" ShowHeader="True" />
                             </Columns>
                         </asp:GridView>

@@ -15,25 +15,8 @@ namespace WebApplication8
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            using (SqlConnection con = new SqlConnection(connectionstring))
-            {
-                con.Open();
-                SqlDataAdapter brand = new SqlDataAdapter("SELECT Brand_Name, No_of_Products FROM Brand_Table", con);
-                DataTable dtb = new DataTable();
-                brand.Fill(dtb);
-                Brand.DataSource = dtb;
-                Brand.DataBind();
-            }
-
-            using (SqlConnection con = new SqlConnection(connectionstring))
-            {
-                con.Open();
-                SqlDataAdapter prod = new SqlDataAdapter("SELECT Brand_Name,Product_Name, Quantity FROM Products", con);
-                DataTable dtb = new DataTable();
-                prod.Fill(dtb);
-                Product.DataSource = dtb;
-                Product.DataBind();
-            }
+            
+          
 
 
         }
@@ -55,6 +38,11 @@ namespace WebApplication8
         }
 
         protected void Button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Brand_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -18,5 +18,10 @@ namespace WebApplication8
         {
             Response.Redirect("Add Brand.aspx");
         }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("Edit Brand.aspx");
+        }
     }
 }
