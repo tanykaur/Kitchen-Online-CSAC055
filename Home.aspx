@@ -13,7 +13,7 @@
             font-family: "Comic Sans MS";
         }
         .auto-style1 {
-            height: 710px;
+            height: 1072px;
         }
         .auto-style2 {
             width: 414px;
@@ -25,12 +25,22 @@
         .auto-style4 {
             text-align: right;
         }
+        .auto-style5 {
+            width: 414px;
+            height: 543px;
+        }
+        .auto-style6 {
+            height: 543px;
+        }
+        .auto-style7 {
+            height: 746px;
+        }
         </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div style="background-color: #C0C0C0; background-image: url('Images/Mixer.jpg');" class="auto-style1" >
-            <table>
+            <table class="auto-style7">
                 <tr>
             <td class="auto-style3">
             
@@ -81,15 +91,15 @@
                 </td></tr>
                
                 <tr>
-                    <td class="auto-style2">
+                    <td class="auto-style5">
                     
             
                     
             <asp:GridView ID ="Brand" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" HorizontalAlign="Right" OnSelectedIndexChanged="Brand_SelectedIndexChanged" DataSourceID="SqlDataSource1">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:BoundField Datafield="Brand_Id" HeaderText="Brand_Id" SortExpression="Brand_Id" />
                     <asp:BoundField Datafield="Brand_Name" HeaderText="Brand_Name" SortExpression="Brand_Name" />
+                    <asp:BoundField Datafield="No_of_Products" HeaderText="No_of_Products" SortExpression="No_of_Products" />
                 </Columns>
                 <FooterStyle BackColor="#CCCC99" />
                 <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
@@ -103,9 +113,9 @@
 
 
             </asp:GridView>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Kitchen_OnlineConnectionString %>" SelectCommand="SELECT [Brand_Id], [Brand_Name] FROM [Brand_Table]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Kitchen_OnlineConnectionString %>" SelectCommand="SELECT [Brand_Name], [No_of_Products] FROM [Brand_Table]"></asp:SqlDataSource>
                         </td>
-                    <td>
+                    <td class="auto-style6">
                <asp:GridView ID ="Product" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" DataSourceID="SqlDataSource2">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>

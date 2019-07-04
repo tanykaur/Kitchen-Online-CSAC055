@@ -14,6 +14,8 @@ namespace WebApplication8
         string connectionstring = "Data Source=DESKTOP-QMEMF76\\SQLEXPRESS;Initial Catalog=Kitchen_Online;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
+            show();
+
             using (SqlConnection con = new SqlConnection(connectionstring))
             {
                 con.Open();
@@ -32,9 +34,23 @@ namespace WebApplication8
             }
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void show()
         {
-
+            {
+                SqlConnection con = new SqlConnection(connectionstring);
+                string strSQL = "Select * from Demo";
+                SqlDataAdapter dt = new SqlDataAdapter(strSQL, con);
+                DataSet ds = new DataSet();
+                dt.Fill(ds, "Demo");
+                con.Close();
+                GridView2.DataSource = ds;
+                GridView2.DataBind();
+            }
         }
+            protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                TextBoxUserID.Text = GridView2.SelectedRow.Cells[1].Text;
+                TextBoxUserName.Text = GridView2.SelectedRow.Cells[2].Text;
+            }
     }
 }

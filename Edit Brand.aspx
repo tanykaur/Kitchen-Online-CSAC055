@@ -46,13 +46,10 @@
                         <asp:Label ID="Brandnm" runat="server" Text="Brand Id"></asp:Label>
 
                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        
-                    &nbsp;&nbsp;&nbsp;
+                         &nbsp; &nbsp;&nbsp;
                         
                         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Brand_Id" DataValueField="Brand_Id">
                         </asp:DropDownList>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="DropDownList1" ErrorMessage="*Please select a brand id" ForeColor="Red"></asp:RequiredFieldValidator>
                         
                     </td>
                 </tr>
@@ -87,21 +84,23 @@
                 <tr>
                     <td>
 
-                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="363px" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+                        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="363px">
                             <Columns>
                                 <asp:BoundField DataField="Brand_Name" HeaderText="Brand_Name" SortExpression="Brand_Name" />
                                 <asp:BoundField DataField="Brand_Id" HeaderText="Brand_Id" SortExpression="Brand_Id" />
-                                <asp:TemplateField HeaderText="Edit">
+                                <asp:TemplateField HeaderText="Edit" ShowHeader="False">
                                     <EditItemTemplate>
                                         <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                                        &nbsp;<asp:ImageButton ID="ImageButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" CommandName="Edit" ImageUrl="~/Images/edit.png" OnClick="ImageButton1_Click" Text="" />
+                                        <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="False" CommandName="Edit" ImageUrl="~/Images/edit.png" Text="" />
                                     </ItemTemplate>
                                     <ControlStyle Height="12px" Width="15px" />
                                 </asp:TemplateField>
                                 <asp:CommandField ButtonType="Button" HeaderText="Delete" ShowDeleteButton="True" ShowHeader="True" />
                             </Columns>
+                            
                         </asp:GridView>
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Kitchen_OnlineConnectionString %>" SelectCommand="SELECT [Brand_Name], [Brand_Id] FROM [Brand_Table]"></asp:SqlDataSource>
 

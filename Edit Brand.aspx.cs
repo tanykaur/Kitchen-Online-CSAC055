@@ -10,13 +10,13 @@ namespace WebApplication8
 {
     public partial class Edit_Category : System.Web.UI.Page
     {
-        public string connect = "Data Source=DESKTOP-QMEMF76\\SQLEXPRESS;Initial Catalog=Kitchen_Online;Integrated Security=True";
 
+        public string connect = "Data Source=DESKTOP-QMEMF76\\SQLEXPRESS;Initial Catalog=Kitchen_Online;Integrated Security=True";
+       
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
-
+       
         protected void Button1_Click(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(connect);
@@ -25,7 +25,7 @@ namespace WebApplication8
 
             if (con.State == System.Data.ConnectionState.Open)
             {
-                string edit = "UPDATE Brand_Table SET Brand_Name='" + TextBox2.Text.ToString() + "'WHERE Brand_Id='" + DropDownList1.SelectedItem + "'";
+                string edit = "UPDATE Brand_Table SET Brand_Name='" + TextBox2.Text.ToString() + "'WHERE Brand_Id='" + DropDownList1.SelectedValue + "'";
                 SqlCommand cmd = new SqlCommand(edit, con);
                 cmd.ExecuteNonQuery();
                 Response.Redirect("Brand.aspx");
@@ -35,21 +35,17 @@ namespace WebApplication8
                 Response.Redirect("Home.aspx");
             }
 
+
         }
 
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("Brand.aspx");
         }
+
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("Edit Brand.aspx");
-
-        }
-
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

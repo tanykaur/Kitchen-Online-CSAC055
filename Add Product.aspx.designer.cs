@@ -76,22 +76,22 @@ namespace WebApplication8 {
         protected global::System.Web.UI.WebControls.Button Products;
         
         /// <summary>
-        /// Brandnm control.
+        /// Brandid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Brandnm;
+        protected global::System.Web.UI.WebControls.Label Brandid;
         
         /// <summary>
-        /// DropDownList2 control.
+        /// TextBox2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        protected global::System.Web.UI.WebControls.TextBox TextBox2;
         
         /// <summary>
         /// Brandnm0 control.
@@ -112,24 +112,6 @@ namespace WebApplication8 {
         protected global::System.Web.UI.WebControls.TextBox TextBox3;
         
         /// <summary>
-        /// Brandid control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Brandid;
-        
-        /// <summary>
-        /// TextBox2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
-        
-        /// <summary>
         /// Brandnm1 control.
         /// </summary>
         /// <remarks>
@@ -148,6 +130,33 @@ namespace WebApplication8 {
         protected global::System.Web.UI.WebControls.TextBox TextBox4;
         
         /// <summary>
+        /// Brandid0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Brandid0;
+        
+        /// <summary>
+        /// DropDownList2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList2;
+        
+        /// <summary>
+        /// SqlDataSource3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource3;
+        
+        /// <summary>
         /// Brandnm2 control.
         /// </summary>
         /// <remarks>
@@ -164,6 +173,15 @@ namespace WebApplication8 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList DropDownList1;
+        
+        /// <summary>
+        /// SqlDataSource2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource2;
         
         /// <summary>
         /// Button1 control.
