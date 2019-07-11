@@ -15,6 +15,10 @@ namespace WebApplication8
        
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["Username"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
        
         protected void Button1_Click(object sender, EventArgs e)
@@ -46,6 +50,13 @@ namespace WebApplication8
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("Edit Brand.aspx");
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Session["Username"] = null;
+            Session["Password"] = null;
+            Response.Redirect("Login.aspx");
         }
     }
 }

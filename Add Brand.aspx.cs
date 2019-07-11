@@ -14,7 +14,10 @@ namespace WebApplication8
         public string connect = "Data Source=DESKTOP-QMEMF76\\SQLEXPRESS;Initial Catalog=Kitchen_Online;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Username"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -24,7 +27,7 @@ namespace WebApplication8
             con.Open();
             if (con.State == System.Data.ConnectionState.Open)
             {
-                string insert = "INSERT INTO Brand_Table(Brand_Name, Brand_Id)values('" + TextBox1.Text.ToString() + "','" + TextBox2.Text.ToString() + "')";
+                string insert = "INSERT INTO Brand_Table(Brand_Name, Brand_Id, Available_Qty)values('" + TextBox1.Text.ToString() + "','" + TextBox2.Text.ToString() + "','" + TextBox3.Text.ToString() + ")";
                 SqlCommand cmd = new SqlCommand(insert, con);
                 cmd.ExecuteNonQuery();
                 Response.Redirect("Brand.aspx");
@@ -37,6 +40,8 @@ namespace WebApplication8
 
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
+            Session["Username"] = null;
+            Session["Password"] = null;
             Response.Redirect("Login.aspx");
         }
 

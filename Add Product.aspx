@@ -71,7 +71,7 @@
                      <asp:Label ID="Kitchen_online" runat="server" CssClass="newStyle2" Font-Size="X-Large" Text="KITCHEN ONLINE"></asp:Label>
 
                     </td>
-                    <td class="auto-style10">   <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Login.aspx">Logout</asp:LinkButton>
+                    <td class="auto-style10">   <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Login.aspx" OnClick="LinkButton1_Click">Logout</asp:LinkButton>
                 </td>
                 </tr>
                 </table>
@@ -206,7 +206,33 @@
                                 </asp:TemplateField>
                             </Columns>
                         </asp:GridView>
-                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Kitchen_OnlineConnectionString %>" SelectCommand="SELECT * FROM [Products]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Kitchen_OnlineConnectionString %>" SelectCommand="SELECT * FROM [Products]" ConflictDetection="CompareAllValues" DeleteCommand="DELETE FROM [Products] WHERE [Product_Id] = @original_Product_Id AND (([Product_Name] = @original_Product_Name) OR ([Product_Name] IS NULL AND @original_Product_Name IS NULL)) AND (([Sales_Price] = @original_Sales_Price) OR ([Sales_Price] IS NULL AND @original_Sales_Price IS NULL)) AND (([Quantity] = @original_Quantity) OR ([Quantity] IS NULL AND @original_Quantity IS NULL)) AND (([Brand_name] = @original_Brand_name) OR ([Brand_name] IS NULL AND @original_Brand_name IS NULL))" InsertCommand="INSERT INTO [Products] ([Product_Id], [Product_Name], [Sales_Price], [Quantity], [Brand_name]) VALUES (@Product_Id, @Product_Name, @Sales_Price, @Quantity, @Brand_name)" OldValuesParameterFormatString="original_{0}" UpdateCommand="UPDATE [Products] SET [Product_Name] = @Product_Name, [Sales_Price] = @Sales_Price, [Quantity] = @Quantity, [Brand_name] = @Brand_name WHERE [Product_Id] = @original_Product_Id AND (([Product_Name] = @original_Product_Name) OR ([Product_Name] IS NULL AND @original_Product_Name IS NULL)) AND (([Sales_Price] = @original_Sales_Price) OR ([Sales_Price] IS NULL AND @original_Sales_Price IS NULL)) AND (([Quantity] = @original_Quantity) OR ([Quantity] IS NULL AND @original_Quantity IS NULL)) AND (([Brand_name] = @original_Brand_name) OR ([Brand_name] IS NULL AND @original_Brand_name IS NULL))">
+                            <DeleteParameters>
+                                <asp:Parameter Name="original_Product_Id" Type="String" />
+                                <asp:Parameter Name="original_Product_Name" Type="String" />
+                                <asp:Parameter Name="original_Sales_Price" Type="String" />
+                                <asp:Parameter Name="original_Quantity" Type="String" />
+                                <asp:Parameter Name="original_Brand_name" Type="String" />
+                            </DeleteParameters>
+                            <InsertParameters>
+                                <asp:Parameter Name="Product_Id" Type="String" />
+                                <asp:Parameter Name="Product_Name" Type="String" />
+                                <asp:Parameter Name="Sales_Price" Type="String" />
+                                <asp:Parameter Name="Quantity" Type="String" />
+                                <asp:Parameter Name="Brand_name" Type="String" />
+                            </InsertParameters>
+                            <UpdateParameters>
+                                <asp:Parameter Name="Product_Name" Type="String" />
+                                <asp:Parameter Name="Sales_Price" Type="String" />
+                                <asp:Parameter Name="Quantity" Type="String" />
+                                <asp:Parameter Name="Brand_name" Type="String" />
+                                <asp:Parameter Name="original_Product_Id" Type="String" />
+                                <asp:Parameter Name="original_Product_Name" Type="String" />
+                                <asp:Parameter Name="original_Sales_Price" Type="String" />
+                                <asp:Parameter Name="original_Quantity" Type="String" />
+                                <asp:Parameter Name="original_Brand_name" Type="String" />
+                            </UpdateParameters>
+                        </asp:SqlDataSource>
 
                     </td>
                 </tr>

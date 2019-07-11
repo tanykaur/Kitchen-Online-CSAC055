@@ -28,12 +28,13 @@ namespace WebApplication8
             SqlDataReader sdr = cmd.ExecuteReader();
             if (sdr.Read())
             {
+                Session["Username"] = TextBox1.Text;
+                Session["Password"] = TextBox2.Text;
                 Response.Redirect("Home.aspx");
             }
             else
             {
                 Response.Write("Sorry you are not registered in the database");
-
             }
             con.Close();
         }

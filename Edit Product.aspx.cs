@@ -14,7 +14,10 @@ namespace WebApplication8
         public string connect = "Data Source=DESKTOP-QMEMF76\\SQLEXPRESS;Initial Catalog=Kitchen_Online;Integrated Security=True";
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["Username"] == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
@@ -38,6 +41,22 @@ namespace WebApplication8
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("Products List.aspx");
+        }
+
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("Edit Product.aspx");
+        }
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+        {
+
+        }
+
+        protected void LinkButton1_Click(object sender, EventArgs e)
+        {
+            Session["Username"] = null;
+            Session["Password"] = null;
+            Response.Redirect("Login.aspx");
         }
     }
 }
