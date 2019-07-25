@@ -4,6 +4,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="Scripts/bootstrap.min.js"></script>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
     <style type="text/css">
         .newStyle1 {
             font-size: small;
@@ -131,7 +136,7 @@
                     
             
                     
-            <asp:GridView ID ="Brand" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" HorizontalAlign="Right" OnSelectedIndexChanged="Brand_SelectedIndexChanged" DataSourceID="SqlDataSource1">
+            <asp:GridView ID ="Brand" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" HorizontalAlign="Right" DataSourceID="SqlDataSource1">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
                     <asp:BoundField Datafield="Brand_Name" HeaderText="Brand_Name"/>
@@ -152,12 +157,12 @@
                         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:Kitchen_OnlineConnectionString %>" SelectCommand="SELECT [Brand_Name], [Available_Qty] FROM [Brand_Table]"></asp:SqlDataSource>
                         </td>
                     <td class="auto-style6">
-               <asp:GridView ID ="Product" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" DataSourceID="SqlDataSource2">
+               <asp:GridView ID ="Product" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Vertical" DataSourceID="SqlDataSource2" DataKeyNames="Product_Id">
                 <AlternatingRowStyle BackColor="White" />
                 <Columns>
-                    <asp:BoundField Datafield="Brand_name" HeaderText="Brand_name" SortExpression="Brand_name" />
+                    <asp:BoundField Datafield="Product_Id" HeaderText="Product_Id" SortExpression="Product_Id" ReadOnly="True" />
                     <asp:BoundField Datafield="Product_Name" HeaderText="Product_Name" SortExpression="Product_Name" />
-                    <asp:BoundField Datafield="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
+                    <asp:BoundField DataField="Brand_Name" HeaderText="Brand_Name" SortExpression="Brand_Name" />
                 </Columns>
                 <FooterStyle BackColor="#CCCC99" />
                 <HeaderStyle BackColor="#6B696B" Font-Bold="True" ForeColor="White" />
@@ -171,7 +176,7 @@
 
             </asp:GridView>           
             
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Kitchen_OnlineConnectionString %>" SelectCommand="SELECT [Brand_name], [Product_Name], [Quantity] FROM [Products]"></asp:SqlDataSource>
+                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Kitchen_OnlineConnectionString %>" SelectCommand="SELECT [Product_Id], [Product_Name], [Brand_Name] FROM [Products]"></asp:SqlDataSource>
             
                </td>
 

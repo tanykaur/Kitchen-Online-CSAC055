@@ -97,7 +97,7 @@
                                         &nbsp;<asp:ImageButton ID="ImageButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                                     </EditItemTemplate>
                                     <ItemTemplate>
-                                        <asp:ImageButton ID="ImageButton3" runat="server" CausesValidation="False" CommandName="Edit" ImageUrl="~/Images/edit.png" Text="" />
+                                        <asp:ImageButton ID="ImageButton3" runat="server" CausesValidation="False" CommandName="Edit" ImageUrl="~/Images/edit.png" Text="" OnClick="ImageButton3_Click1" />
                                     </ItemTemplate>
                                     <ControlStyle Height="12px" Width="15px" />
                                 </asp:TemplateField>

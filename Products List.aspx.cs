@@ -28,5 +28,10 @@ namespace WebApplication8
             Session["Password"] = null;
             Response.Redirect("Login.aspx");
         }
+
+        protected void ImageButton3_Click(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("Edit Product.aspx");
+        }
     }
 }

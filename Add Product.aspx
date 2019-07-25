@@ -71,7 +71,7 @@
                      <asp:Label ID="Kitchen_online" runat="server" CssClass="newStyle2" Font-Size="X-Large" Text="KITCHEN ONLINE"></asp:Label>
 
                     </td>
-                    <td class="auto-style10">   <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Login.aspx" OnClick="LinkButton1_Click">Logout</asp:LinkButton>
+                    <td class="auto-style10">   <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">Logout</asp:LinkButton>
                 </td>
                 </tr>
                 </table>
@@ -133,7 +133,7 @@
                     </td>
                     <td class="auto-style15">
 
-                        <asp:DropDownList ID="DropDownList2" runat="server" OnSelectedIndexChanged="DropDownList2_SelectedIndexChanged" DataSourceID="SqlDataSource3" DataTextField="Brand_Name" DataValueField="Brand_Name">
+                        <asp:DropDownList ID="DropDownList2" runat="server" DataSourceID="SqlDataSource3" DataTextField="Brand_Name" DataValueField="Brand_Name">
                         </asp:DropDownList>
 
                         <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:Kitchen_OnlineConnectionString %>" SelectCommand="SELECT [Brand_Name] FROM [Brand_Table]"></asp:SqlDataSource>
@@ -151,9 +151,7 @@
                         <asp:Label ID="Brandnm2" runat="server" Text="Available Quantity"></asp:Label>
                         </td>
                     <td class="auto-style14">
-                        <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource2" DataTextField="Qty" DataValueField="Qty">
-                        </asp:DropDownList>
-                        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:Kitchen_OnlineConnectionString %>" SelectCommand="SELECT [Qty] FROM [Quantity]"></asp:SqlDataSource>
+                        <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
 
                         </td>
                     </tr>
@@ -189,7 +187,7 @@
                                 <asp:BoundField DataField="Sales_Price" HeaderText="Sales_Price" SortExpression="Sales_Price" />
                                 <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
                                 <asp:BoundField DataField="Brand_name" HeaderText="Brand_name" SortExpression="Brand_name" />
-                                <asp:TemplateField HeaderText="Edit">
+                                <asp:TemplateField HeaderText="Edit" SortExpression="Product_Id">
                                     <EditItemTemplate>
                                         <asp:ImageButton ID="ImageButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
                                     </EditItemTemplate>

@@ -28,7 +28,7 @@ namespace WebApplication8
 
             if (con.State == System.Data.ConnectionState.Open)
             {
-                string edit = "INSERT INTO Products (Product_Name, Sales_Price, Quantity, Brand_Name, Product_Id)values('" + TextBox3.Text.ToString() +"','" + TextBox4.Text.ToString() + "','" + DropDownList1.SelectedItem + "','" + DropDownList2.SelectedItem + "','" + TextBox2.Text.ToString() +"')";
+                string edit = "INSERT INTO Products (Product_Name, Sales_Price, Quantity, Brand_Name, Product_Id)values('" + TextBox3.Text.ToString() +"','" + TextBox4.Text.ToString() + "','" + TextBox5.Text.ToString() + "','" + DropDownList2.SelectedItem + "','" + TextBox2.Text.ToString() +"')";
                 SqlCommand cmd = new SqlCommand(edit, con);
                 cmd.ExecuteNonQuery();
                 Response.Redirect("Products List.aspx");
@@ -42,11 +42,6 @@ namespace WebApplication8
         protected void Button2_Click(object sender, EventArgs e)
         {
             Response.Redirect("Products List");
-        }
-
-        protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
