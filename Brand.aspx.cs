@@ -22,16 +22,16 @@ namespace WebApplication8
             Response.Redirect("Add Brand.aspx");
         }
 
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
-        {
-            Response.Redirect("Edit Brand.aspx");
-        }
-
         protected void LinkButton1_Click(object sender, EventArgs e)
         {
             Session["Username"] = null;
             Session["Password"] = null;
             Response.Redirect("Login.aspx");
+        }
+
+        protected void ImageButton1_Click1(object sender, ImageClickEventArgs e)
+        {
+            Response.Redirect("Edit Brand.aspx");
         }
     }
 }

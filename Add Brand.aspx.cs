@@ -45,12 +45,7 @@ namespace WebApplication8
             Response.Redirect("Login.aspx");
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+        protected void ImageButton3_Click1(object sender, ImageClickEventArgs e)
         {
             Response.Redirect("Edit Brand.aspx");
         }
